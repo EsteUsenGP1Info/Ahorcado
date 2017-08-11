@@ -16,7 +16,12 @@ def buscar_lista():
 	referencia = palref[1]
 	return palabra, referencia
 
-
+def seleccionar_lista():
+	seleccion = random.choice(lista_palabras)
+	aux = len(seleccion[0])
+		for x in range(aux):
+				auxlista = auxlista.replace(seleccion[x], " _ ")
+	return auxlista
 
 def Crearlista():
 	lista = ["Mauricio","Alan","Marina","Facundo"]
