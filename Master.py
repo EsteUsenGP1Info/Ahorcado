@@ -13,3 +13,9 @@ def Calculalongitud():
 	return longitud
 
 
+def seleccionar_lista():
+	seleccion = random.choice(lista_palabras)
+	aux = len(seleccion[0])
+		for x in range(aux):
+				auxlista = auxlista.replace(seleccion[x], " _ ")
+	return auxlista
