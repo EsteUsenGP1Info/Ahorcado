@@ -1,18 +1,33 @@
-lista_palabras = "informatorio"
+lista_palabras = list()
 
-print (lista_palabras)
+import random
+import pickle
+num = random.randint(0,10)
 
-# Historia 4: quiero que al acertar la letra me muestre su posición/es en caso de repetirse
-# para: ver como se va formando la palabra.
 
-# Tarea 1: Haga una Funcion de seleccion, en caso de ser TRUE, en un bucle localice la posicion de la letra 
-#acertada y reemplace en la cadena auxiliar de "guiones" por la letra en dicha posicion. Retorne la cadena 
-#auxiliar.
+#Esta Funcion busca la incognita y la referencia de la lista principal. Devuelve dos cadenas,"palabra" y "referencia".
+def buscar_lista():
+	archivo = open("palabras.dat","rb")
+	lista_palabras = pickle.load(archivo)
+	archivo.close()
+	palref = list()
+	palref = random.choice(lista_palabras)
+	palabra = palref[0]
+	referencia = palref[1]
+	return palabra, referencia
 
-# Tarea 2: Hacer una función que muestre la cadena auxiliar.
 
-def seleccion(a,b):
 
-	
+def Crearlista():
+	lista = ["Mauricio","Alan","Marina","Facundo"]
+	devuelve = random.choice(lista)
+	return devuelve
 
-	return resultado
+def Calculalongitud():
+	longitud = len(lista[num])
+	print ("El numero de letras en la palabra es: ")
+	return longitud
+
+incognita, referencia = buscar_lista()
+print ("\nPalabra: ",incognita,"     - Referencia: ",referencia)
+print ("\nFin...")
