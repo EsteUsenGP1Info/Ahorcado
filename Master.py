@@ -1,24 +1,52 @@
-lista_palabras = "informatorio"
+# lista_palabras = "informatorio"
 
-print (lista_palabras)
+# print (lista_palabras)
+
+
+
+
+
+
+import os
+
+def limpiar():
+	os.system("cls")
+	print("         BIENVENIDO AL AHORCADO")
 
 
 def menu_juego():
-	s = False
-	while s==False:
-		
-		print ("Opciones: ")
-		print ("1-Iniciar Partida\n2 - Ranking\n3 - Salir del juego")
+		limpiar()
+		print ("                  MENU  ")
+		print("           *****************")
+		print ("          1-Iniciar Partida\n          2-Ranking de Puntos\n          3-Salir del juego")
+		print("           *****************")
+		print()
 
-		ing = int(input ("ingrese una opcion: "))
+		ing = int(input ("Elija una opcion: "))
+		if ing==1:
+			limpiar()		
+			palabra=input("Ingrese una letra: ")
+
+		if ing ==2:
+			limpiar()
+			print (" \n      RANKING DE PUNTOS\n")
+			print("   1-Punisher: 3000 Pts.")
+			print("   2-Deathstroke: 2500 Pts.")
+			print("   3-Spiderman: 1000 Pts.")
+			print()
+			opcion=input( "Quiere elegir otra opcion?: si/no   ")
+			if opcion=="si":
+				return True
+			else:
+				print ("Has salido del juego")
+				return False
+
 		if ing ==3:
-			s= True
+			return False
 			print ("Has salido del juego")
 
-		
-		if ing==1:
-			
-			print ("\nIniciando...\n\n")
+s = True
 
-			
-			input()
+while s==True:
+	limpiar()
+	s=menu_juego()
